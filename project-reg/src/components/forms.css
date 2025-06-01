@@ -1,0 +1,47 @@
+/* Forms.css */
+.body{
+    background-color: darkslategrey;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    color: #2c3e50;
+  }
+  
+  .form-wrapper-box {
+    background-color: #f8f9fa;
+    border: 2px solid #1e2328;
+    border-radius: 15px;
+    padding: 30px;
+    margin: 0 auto;
+    max-width: 1000px;
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.1);
+    padding: 50px;
+  }
+  
+  label.fw-bold {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+  
+  input::placeholder,
+  textarea::placeholder {
+    font-style:normal;
+    color: #999;
+  }
+  
+  .form-control {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+  }
+  
+  button.btn {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    padding: 10px 24px;
+  }
+  
