@@ -9,7 +9,7 @@ class Project(Base):#now SQLAlchemy would be able to understand that this class 
     title=Column(String)
     department=Column(String)
     budget=Column(String)
-    clients=Column(String)
+    client=Column(String)
     project_lead=Column(String)
     project_category=Column(String)
     start_date=Column(String)
@@ -18,6 +18,7 @@ class Project(Base):#now SQLAlchemy would be able to understand that this class 
     filename=Column(String)#i will be storing the file name alone
     submitted_by=Column(String,nullable=False)
     approval_status=Column(String,default="pending")
+
     
     
     

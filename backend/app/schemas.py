@@ -7,17 +7,18 @@ class ProjectCreate(BaseModel):
     budget:str
     client:str
     project_lead:str 
-    category:str
-    startdate:str
-    enddate:str
+
+    project_category:str
+    start_date:str
+    end_date:str
     brief_description:str
     filename:Optional[str]=None
-    submittedby=str 
-    approval=str
+    submitted_by:str 
+    approval_status:str
 class ProjectOut(BaseModel):
     id:int
     title:str 
-    status:str
+    approval_status:str
     submitted_by:str
     
     

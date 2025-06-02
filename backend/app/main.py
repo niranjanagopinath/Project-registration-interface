@@ -71,7 +71,7 @@ async def register_project(
       "project_id":db_project.id
    })
 
-@app.get("/projects",response_model=List[schemas.ProjectOut])
+@app.get("/myproj",response_model=List[schemas.ProjectOut])
 def get_projects(email: str=Query(...),db:Session=Depends(get_db)):
       projects=db.query(models.Project).filter(models.Project.submitted_by==email).all()
       return projects
