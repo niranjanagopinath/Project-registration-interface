@@ -1,25 +1,35 @@
 /* Forms.css */
 .body{
-    background-color: darkslategrey;
-    padding-bottom: 50px;
-    padding-top: 50px;
+    background-color: rgb(228, 237, 237);
+    
+
 }
+
 
 h1 {
     font-family: 'Poppins', sans-serif;
     font-weight: 900;
     color: #2c3e50;
   }
+  .container{
+    
+    margin-top: 40px; /* Adjust this value as needed */
+    padding: 20px;
   
+  }
+  
+
   .form-wrapper-box {
+    padding-top: 80px;
     background-color: #f8f9fa;
-    border: 2px solid #1e2328;
+    border: 2px solid #57595c;
     border-radius: 15px;
     padding: 30px;
     margin: 0 auto;
     max-width: 1000px;
     box-shadow: 0 0 15px rgba(0, 123, 255, 0.1);
     padding: 50px;
+  
   }
   
   label.fw-bold {
