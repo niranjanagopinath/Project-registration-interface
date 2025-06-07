@@ -4,6 +4,7 @@ import React, {
   ReactHTMLElement,
   useState,
 } from "react";
+import "./viewproj.css"
 
 function Viewproj() {
   const [email, setemail] = useState("");
@@ -33,8 +34,13 @@ function Viewproj() {
   };
 
   return (
+    <>
+    <br></br>
     <div className="coop">
+      
       <form className="forms" onSubmit={handlesubmit}>
+        <center>
+        
         <div className="email">
           <label htmlFor="viewemail">
             <input
@@ -46,23 +52,44 @@ function Viewproj() {
               className="form-control"
             ></input>
           </label>
+          
         </div>
+        </center>
+        <br/>
+        <center>
         <div>
           <button type="submit">submit</button>
         </div>
+        </center>
       </form>
-      <div className="display">
-      {viewproj.map((project)=>(
-        <div key={project.id}>
-            <h1>{project.title}</h1>
-            <h1>{project.approval_status}</h1>
-            <h1>{project.submitted_by}</h1>
-        </div>
+      <br/>
 
+      <div className="display">
+       
+      <div className="container">
+      {viewproj.map((project)=>(
+        <div className="card">
+        <h1>{project.title}</h1>
+        <small>Project ID</small>
+        <p>{project.id}</p>
+        <small>status</small>
+        <p>{project.approval_status}</p>
+        <small>submitted by</small>
+        <p>{project.submitted_by}</p>
+</div>
+
+       
+           
+      
         
+
       ))}
       </div>
+      </div>
+      
+      
     </div>
+    </>
   );
 }
 

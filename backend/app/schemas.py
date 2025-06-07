@@ -5,7 +5,7 @@ class ProjectCreate(BaseModel):
     title:str
     department:str
     budget:str
-    client:str
+    clients:str
     project_lead:str 
 
     project_category:str

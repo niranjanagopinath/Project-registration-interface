@@ -1,0 +1,24 @@
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding-left:10px;
+    padding-right: 10px;
+    padding-top:10px;
+    padding-bottom: 10px;
+    width: 300px;
+}
+
+.card:hover{
+    box-shadow: 0 4px 8px 0 rgba(6, 1, 19, 0.847);
+    transform: scale(1.05);
+
+
+}
+.container{
+    padding-bottom: 20px;
+    display:flex;
+    flex-wrap: wrap;
+    gap:20px;
+    justify-content: center;
+
+}

@@ -1,57 +1,66 @@
 /* Forms.css */
 .body{
-    background-color: rgb(228, 237, 237);
-    
-
+  background-color: rgb(228, 237, 237);
 }
 
-
 h1 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 900;
-    color: #2c3e50;
-  }
-  .container{
-    
-    margin-top: 40px; /* Adjust this value as needed */
-    padding: 20px;
-  
-  }
-  
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  color: #2c3e50;
+}
 
-  .form-wrapper-box {
-    padding-top: 80px;
-    background-color: #f8f9fa;
-    border: 2px solid #57595c;
-    border-radius: 15px;
-    padding: 30px;
-    margin: 0 auto;
-    max-width: 1000px;
-    box-shadow: 0 0 15px rgba(0, 123, 255, 0.1);
-    padding: 50px;
-  
-  }
-  
-  label.fw-bold {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    color: #1a1a1a;
-  }
-  
-  input::placeholder,
-  textarea::placeholder {
-    font-style:normal;
-    color: #999;
-  }
-  
-  .form-control {
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.95rem;
-  }
-  
-  button.btn {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    padding: 10px 24px;
-  }
-  
+.container{
+  margin-top: 40px;
+  padding: 20px;
+  width: 100%;
+}
+
+.form-wrapper-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #f8f9fa;
+  border: 2px solid #57595c;
+  border-radius: 15px;
+  padding-top: 20px;
+  margin: 0 auto;
+  max-width: 900px; /* Increased from 1000px */
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.1);
+}
+
+/* Style the two-column layout to use more space */
+.d-flex.flex-wrap.justify-content-between {
+  gap: 30px; /* Add gap between columns */
+}
+
+.d-flex.flex-wrap.justify-content-between .me-3.flex-grow-1,
+.d-flex.flex-wrap.justify-content-between .flex-grow-1 {
+  flex: 1; /* Equal width distribution */
+  min-width: 300px; /* Minimum width for each column */
+}
+
+/* Ensure form controls take full width */
+.form-control {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  width: 100%;
+}
+
+label.fw-bold {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-style: normal;
+  color: #999;
+}
+
+button.btn {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  padding: 10px 24px;
+}

@@ -9,7 +9,7 @@ class Project(Base):#now SQLAlchemy would be able to understand that this class 
     title=Column(String)
     department=Column(String)
     budget=Column(String)
-    client=Column(String)
+    clients=Column(String)
     project_lead=Column(String)
     project_category=Column(String)
     start_date=Column(String)

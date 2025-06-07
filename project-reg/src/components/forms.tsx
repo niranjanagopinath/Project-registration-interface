@@ -33,7 +33,7 @@ function Forms() {
     setprojectlead(e.target.value);
   };
 
-  const changestartdate = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const changestartdate = (e: React.ChangeEvent<HTMLInputDate>) => {
     setstartdate(e.target.value);
   };
   const changeenddate = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -99,25 +99,14 @@ function Forms() {
       else{
         console.error("server error",await response.text());
       }
-
-
-
     }
     catch(err){
       console.error("request failed",err)
     }
   };
 
-
-
-
-
-
-  
-
   return (
     <>
-      
       <div className="body">
       <div className="form-wrapper-box">
       <div className="fw-bold">
@@ -126,11 +115,10 @@ function Forms() {
       </h1>
       </div>
 
-      
       <div className="container">
         <form onSubmit={handlesubmit} method="POST" encType="multipart/form-data">
           <div className="d-flex flex-wrap justify-content-between mb-3">
-            <div className="me-3 flex-grow-1" style={{ maxWidth: "48%" }}>
+            <div className="me-3 flex-grow-1">
               <label htmlFor="projtitle" className="fw-bold"> Project Title</label>
               <input
                 type="text"
@@ -143,7 +131,7 @@ function Forms() {
                 required
               ></input>
             </div>
-            <div className="flex-grow-1" style={{ maxWidth: "48%" }}>
+            <div className="flex-grow-1">
               <label htmlFor="department" className="fw-bold">Enter the department</label>
               <select
                 id="department"
@@ -179,7 +167,7 @@ function Forms() {
             </div>
           )}
           <div className="d-flex flex-wrap justify-content-between mb-3">
-            <div className="me-3 flex-grow-1" style={{ maxWidth: "48%" }}>
+            <div className="me-3 flex-grow-1">
               <label htmlFor="budget" className="fw-bold">Estimated Budget</label>
               <input
                 type="text"
@@ -191,7 +179,7 @@ function Forms() {
                 value={budget}
               ></input>
             </div>
-            <div className="flex-grow-1" style={{ maxWidth: "48%" }}>
+            <div className="flex-grow-1">
               <label htmlFor="client" className="fw-bold">Client</label>
               <input
                 type="text"
@@ -206,7 +194,7 @@ function Forms() {
           </div>
 
           <div className="d-flex flex-wrap justify-content-between mb-3">
-            <div className="me-3 flex-grow-1" style={{ maxWidth: "48%" }}>
+            <div className="me-3 flex-grow-1">
               <label htmlFor="projectlead" className="fw-bold">Project Lead</label>
               <input
                 type="text"
@@ -219,7 +207,7 @@ function Forms() {
                 placeholder=" Enter the name of the project lead"
               ></input>
             </div>
-            <div className="flex-grow-1" style={{ maxWidth: "48%" }}>
+            <div className="flex-grow-1">
               <label htmlFor="projectcategory" className="fw-bold">
                 Select the category of your project
               </label>
@@ -257,7 +245,7 @@ function Forms() {
           )}
 
           <div className="d-flex flex-wrap justify-content-between mb-3">
-            <div className="me-3 flex-grow-1" style={{ maxWidth: "48%" }}>
+            <div className="me-3 flex-grow-1">
               <label htmlFor="startdate" className="fw-bold">Start Date</label>
               <input
                 type="date"
@@ -270,7 +258,7 @@ function Forms() {
               ></input>
             </div>
 
-            <div className="flex-grow-1" style={{ maxWidth: "48%" }}>
+            <div className="flex-grow-1">
               <label htmlFor="enddate" className="fw-bold">End Date </label>
               <input
                 type="date"
@@ -331,7 +319,6 @@ function Forms() {
           )}
           <div className="d-flex justify-content-center">
             <button type="submit" className="btn btn-primary">
-             
               Submit
             </button>
           </div>
