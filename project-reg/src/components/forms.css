@@ -1,6 +1,10 @@
 /* Forms.css */
 .body{
-  background-color: rgb(228, 237, 237);
+  background-color: rgb(52, 53, 59);
+  background-image: linear-gradient(rgb(52, 53, 59),black);
+ 
+  
+  
 }
 
 h1 {

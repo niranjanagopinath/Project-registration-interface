@@ -22,3 +22,24 @@
     justify-content: center;
 
 }
+
+  
+.momo button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    padding: 10px 24px;
+        background-color: #000000;       /* Blue background */
+        color: white;                    /* White text */
+        border: none;                   /* Remove default border */
+              
+        border-radius: 5px;             /* Rounded corners */
+        font-size: 16px;                /* Larger text */
+        cursor: pointer;                /* Pointer cursor on hover */
+        transition: background-color 0.3s ease; /* Smooth hover effect */
+      }
+      
+.momo button:hover {
+        background-color: #3d4248;     /* Darker blue on hover */
+      }
+       
+

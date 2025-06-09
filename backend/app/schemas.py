@@ -2,6 +2,7 @@ from pydantic import BaseModel
 from typing import Optional
 
 class ProjectCreate(BaseModel):
+    id:int
     title:str
     department:str
     budget:str
@@ -24,6 +25,8 @@ class ProjectOut(BaseModel):
     
     class Config:
         orm_mode=True
-        
+
+class Email(BaseModel):
+    email:str
     
     

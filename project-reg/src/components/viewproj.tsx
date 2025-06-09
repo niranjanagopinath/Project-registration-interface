@@ -17,10 +17,31 @@ function Viewproj() {
   const handlesubmit = async(e: FormEvent) => {
     e.preventDefault();
     try{
-    const url=`http://localhost:8000/myproj?email=${email}`;
-    const res=await fetch(url);
-    const data=await res.json();
-    setviewproj(data);
+      const managerEmail="neenu098@gmail.com";
+      const url1=`http://localhost:8000/send-magic-link`;
+      if(email.trim().toLowerCase()===managerEmail.toLowerCase()){
+        const response=await fetch(url1,{
+          method:"POST",
+          headers:{
+            "content-type":"application/json"
+          },
+          body:JSON.stringify({email}),
+
+        });
+        const result=await response.json(); 
+
+        if (response.ok){
+          alert("magic link has been sent check you mail please");
+        }
+        else{
+          alert("failed to send magic link");
+        }
+        return;
+      }
+       const url=`http://localhost:8000/myproj?email=${email}`;
+       const res=await fetch(url);
+       const data=await res.json();
+       setviewproj(data);
 
     }
     catch{
@@ -57,7 +78,7 @@ function Viewproj() {
         </center>
         <br/>
         <center>
-        <div>
+        <div className="momo">
           <button type="submit">submit</button>
         </div>
         </center>

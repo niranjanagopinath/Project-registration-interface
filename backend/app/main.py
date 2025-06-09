@@ -6,7 +6,22 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.database import engine,Base
 from app.database import sessionlocal 
 from app import models,schemas
+from dotenv import load_dotenv
+from datetime import datetime, timedelta
 
+import os
+import jwt
+
+
+load_dotenv('C:/Users/niran/OneDrive/Desktop/javascript/backend/app\.env')  
+
+MANAGER_EMAIL = os.getenv("MANAGER_EMAIL")
+JWT_SECRET = os.getenv("JWT_SECRET")
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+ANON_KEY = os.getenv("ANON_KEY")
+
+from supabase import create_client
+supabase = create_client(SUPABASE_URL, ANON_KEY)
 
 app=FastAPI()
 
@@ -75,6 +90,44 @@ async def register_project(
 def get_projects(email: str=Query(...),db:Session=Depends(get_db)):
       projects=db.query(models.Project).filter(models.Project.submitted_by==email).all()
       return projects
+
+@app.get("/view-all",response_model=List[schemas.ProjectCreate])
+def get_all_projects(db:Session=Depends(get_db)):
+      return db.query(models.Project).all()
+   
+@app.post("/approve",response_model=schemas.ProjectCreate)
+def approve_project(project_id:int=Query(...),db:Session=Depends(get_db)):
+   project=db.query(models.Project).filter(models.Project.id==project_id).first()
+   if project:
+      project.approval_status="Approved"
+      db.commit()
+      db.refresh(project)
+      return project
+   
+   
+@app.post("/send-magic-link")
+
+def send_magic_link(req:schemas.Email):
+   email=req.email
+   if email!=MANAGER_EMAIL:
+      return{"message":"no magic link has been sent"}
+   
+
+   try:
+      response=supabase.auth.sign_in_with_otp({
+         "email":email,
+         "options":{
+            "email_redirect_to":f"http://localhost:5173/approve"
+         }
+         })
+      if response:
+         return{"message":"the magic link has been sent"}
+      else:
+         return{"message":"failed to send message"}
+      
+   except Exception as e:
+      print(f"error sending the magic link")
+      return{"message":"error"}
 
 
    

@@ -1,10 +1,13 @@
 .navbar{
+    position: fixed;
     padding-top: 0;
-    background-color: transparent;
+    background-color:rgb(52, 53, 59);
     display:flex;
     justify-content: flex-end;
     transition: all 0.4s ease;
     z-index: 999;
+    width: 100%;
+    top:0;
 
 
 }
