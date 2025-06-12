@@ -3,9 +3,8 @@ import "./navbar.css";
 
 const Navbar: React.FC = () => {
   return (
-    <div className="body">
+   
       <nav className="navbar">
-        <div className="con">
           <ul className="list">
             <li className="comp">
               <Link to="/" className="link">
@@ -23,9 +22,9 @@ const Navbar: React.FC = () => {
               </Link>
             </li>
           </ul>
-        </div>
+        
       </nav>
-    </div>
+    
   );
 };
 export default Navbar;

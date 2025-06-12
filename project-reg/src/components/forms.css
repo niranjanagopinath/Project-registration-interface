@@ -1,7 +1,18 @@
 /* Forms.css */
-.body{
+html,body{
   background-color: rgb(52, 53, 59);
-  background-image: linear-gradient(rgb(52, 53, 59),black);
+  background-image: linear-gradient(rgba(193, 246, 108, 0.772),rgb(237, 243, 239),rgb(239, 239, 247),rgb(163, 172, 213));
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-position: center;
+}
+.body{
+  /* background-color: rgb(52, 53, 59);
+  background-image: linear-gradient(rgb(52, 53, 59),black); */
+  padding-top: 20px;
+  margin: 0px;
  
   
   
@@ -15,11 +26,12 @@ h1 {
 
 .container{
   margin-top: 40px;
-  padding: 20px;
+  padding: 10px;
   width: 100%;
 }
 
 .form-wrapper-box {
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -27,7 +39,7 @@ h1 {
   background-color: #f8f9fa;
   border: 2px solid #57595c;
   border-radius: 15px;
-  padding-top: 20px;
+  padding-top: 50px;
   margin: 0 auto;
   max-width: 900px; /* Increased from 1000px */
   box-shadow: 0 0 15px rgba(0, 123, 255, 0.1);
