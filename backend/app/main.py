@@ -11,6 +11,12 @@ from datetime import datetime, timedelta
 
 import os
 import jwt
+import uuid
+from fastapi import UploadFile
+
+def get_unique_filename(file: UploadFile):
+    ext = file.filename.split('.')[-1]
+    return f"{uuid.uuid4()}.{ext}"
 
 
 load_dotenv('C:/Users/niran/OneDrive/Desktop/javascript/backend/app\.env')  
@@ -18,10 +24,10 @@ load_dotenv('C:/Users/niran/OneDrive/Desktop/javascript/backend/app\.env')
 MANAGER_EMAIL = os.getenv("MANAGER_EMAIL")
 JWT_SECRET = os.getenv("JWT_SECRET")
 SUPABASE_URL = os.getenv("SUPABASE_URL")
-ANON_KEY = os.getenv("ANON_KEY")
+SERVICE_KEY = os.getenv("SERVICE_KEY")
 
 from supabase import create_client
-supabase = create_client(SUPABASE_URL, ANON_KEY)
+supabase = create_client(SUPABASE_URL,SERVICE_KEY)
 
 app=FastAPI()
 
@@ -63,6 +69,25 @@ async def register_project(
    
    
 ):
+   file_url = None
+   if filename:
+        try:
+           unique_filename = get_unique_filename(filename)
+           file_content = await filename.read()
+           supabase.storage.from_("project-files").upload(
+              unique_filename,
+              file_content,
+              {"content-type": filename.content_type, "upsert": False}
+           )
+           file_url = f"{SUPABASE_URL}/storage/v1/object/public/project-files/{unique_filename}"
+            
+
+
+            
+        except Exception as e:
+            print(f"Error uploading file to Supabase: {e}")
+            return JSONResponse(content={"message": "File upload failed"}, status_code=500)
+
    db_project=models.Project(
       title=title,
       department=department,
@@ -74,7 +99,8 @@ async def register_project(
       project_category=project_category,
       brief_description=brief_description,
       submitted_by=email,
-      filename=filename.filename if filename else None
+      filename=file_url
+      
    )
    
    db.add(db_project)
@@ -103,7 +129,14 @@ def approve_project(project_id:int=Query(...),db:Session=Depends(get_db)):
       db.commit()
       db.refresh(project)
       return project
-   
+@app.post("/reject",response_model=schemas.ProjectCreate)
+def approve_project(project_id:int=Query(...),db:Session=Depends(get_db)):
+   project=db.query(models.Project).filter(models.Project.id==project_id).first()
+   if project:
+      project.approval_status="Rejected"
+      db.commit()
+      db.refresh(project)
+      return project
    
 @app.post("/send-magic-link")
 

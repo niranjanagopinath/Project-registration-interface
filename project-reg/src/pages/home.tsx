@@ -4,6 +4,7 @@ import myImage from 'C:/Users/niran/Downloads/image-removebg-preview.png';
 function Home(){
     return(
     <>
+    <div className='wrapper'>
     <div className="textbox">
     <div className="home">
     <h1>Welcome to the project registration portal</h1>
@@ -11,6 +12,7 @@ function Home(){
 
     </div>
     <div className="below">
+        <br/>
         <p>This platform streamlines the registration and tracking of new projects 
             across Engineering, Procurement, and Construction (EPC) functions. 
             Designed for efficiency and transparency, it enables real-time collaboration, 
@@ -21,6 +23,7 @@ function Home(){
     <div className="image-container">
           <img src={myImage} alt="Project illustration" />
         </div>
+    </div>
 
     
     </>

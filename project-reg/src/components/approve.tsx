@@ -44,7 +44,22 @@ function Approve() {
         alert("failed to approve the project");
     }
 }
+async function handlereject(project_id){
+  const response= await fetch(`http://localhost:8000/reject?project_id=${project_id}`,{
+      method:'POST',
+  });
 
+  if(response.ok){
+      setprojects((prev)=>
+          prev.map((p)=>
+              p.id===project_id?{...p,approval_status:'rejected'}:p));
+
+
+  }
+  else{
+      alert("failed to reject the project");
+  }
+}
 
 
 
@@ -78,9 +93,18 @@ function Approve() {
               <p>{p.end_date}</p>
               <small>brief description</small>
               <p>{p.brief_description}</p>
+              {p.filename && (<>
+              <small>Uploaded File</small>
+              <p><a href={p.filename}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-outline-primary"> 📄 View Uploaded File</a></p>
+              </>)}
               <small>submitted by</small>
               <p>{p.submitted_by}</p>
               <button onClick={()=>handleapprove(p.id)}>Approve</button>
+              <button className="reject-btn" onClick={()=>handlereject(p.id)}>Reject</button>
+              
             </div>
           ))}
       </div>

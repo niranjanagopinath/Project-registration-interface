@@ -95,6 +95,8 @@ function Forms() {
       if (response.ok){
         const data = await response.json();
         console.log("success",data);
+        alert("Your project has been submitted successfully!");
+        window.location.reload();
       }
       else{
         console.error("server error",await response.text());
@@ -111,7 +113,7 @@ function Forms() {
       <div className="form-wrapper-box">
       <div className="fw-bold">
       <h1>
-        <center>Project Registration Interface </center>
+        <center>Enter The Details of Your Project </center>
       </h1>
       </div>
 

@@ -58,6 +58,7 @@ function Viewproj() {
     <>
     <br></br>
     <div className="coop">
+      <center><h3>Enter your email to view your projects</h3></center>
       
       <form className="forms" onSubmit={handlesubmit}>
         <center>

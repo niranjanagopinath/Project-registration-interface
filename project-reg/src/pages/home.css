@@ -1,3 +1,11 @@
+.home-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    min-height: 100vh;
+  }
+
 .textbox{
     min-height: 100vh;
     display: flex;
@@ -8,14 +16,16 @@
     margin: 0;
     padding-right: 250px;
     padding-left:20px;
-    
+    position: relative;
+    margin-right: 20px; 
 
 }
 .home h1 {
-    font-size: 2.8rem;
-    margin-bottom: 20px;
-    color: #0b1457;
-    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 0;
+    letter-spacing: 1px;
   }
 
   .below p {
@@ -26,9 +36,17 @@
     font-family: 'Poppins', sans-serif;
   }
   .image-container {
-    position: relative;
-    margin-left: 700px;        
-    transform: translateY(-550px);
-  }
-  .image-container img {
-    width: 600px;            
+   
+    padding-left: 50px;
+    flex: 1;
+    position: absolute; /* Change to absolute for more reliable positioning */
+    right: 0px; /* Adjust as needed */
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically */
+}
+
+ 
+.image-container img {
+    max-width: 500px;
+    height: auto;
+}   

@@ -14,7 +14,7 @@
 
 }
 .navbar:hover{
-    background-color: rgb(13, 14, 15);
+    background-color: rgba(198, 241, 82, 0.422);
 }
 .list{
    list-style: none;
@@ -37,7 +37,7 @@
 }
 .link{
     text-decoration: none;
-    color:#bdb3b3;
+    color: #0f4e70a0;
     width:100px;
     padding: 16px 24px;
     font-weight:bold;
@@ -51,7 +51,7 @@
 
 }
 .link:hover{
-    background: white;
+    background: rgba(94, 181, 239, 0.29);
     color:black;  
 
 
