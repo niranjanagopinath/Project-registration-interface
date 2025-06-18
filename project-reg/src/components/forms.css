@@ -43,6 +43,8 @@ h1 {
   margin: 0 auto;
   max-width: 900px; /* Increased from 1000px */
   box-shadow: 0 0 15px rgba(0, 123, 255, 0.1);
+  opacity: 0;
+  animation: fadeInForm 0.8s ease-out forwards;
 }
 
 /* Style the two-column layout to use more space */
@@ -79,4 +81,16 @@ button.btn {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   padding: 10px 24px;
+}
+
+
+@keyframes fadeInForm {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

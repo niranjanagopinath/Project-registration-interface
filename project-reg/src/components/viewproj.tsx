@@ -80,7 +80,7 @@ function Viewproj() {
         <br/>
         <center>
         <div className="momo">
-          <button type="submit">submit</button>
+          <button type="submit">Submit</button>
         </div>
         </center>
       </form>

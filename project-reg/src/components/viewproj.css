@@ -1,3 +1,9 @@
+.coop{
+    opacity: 0;
+    animation: fadeInPage 0.8s ease-out forwards;
+  }
+
+
 .coop h3 {
     font-size: 24px;
   font-weight: bold;
@@ -51,5 +57,14 @@
 .momo button:hover {
         background-color: #3d4248;     /* Darker blue on hover */
       }
+
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
        
 

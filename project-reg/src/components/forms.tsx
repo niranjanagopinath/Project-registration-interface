@@ -144,11 +144,18 @@ function Forms() {
                 required
               >
                 <option value="">-- Select Department --</option>
-                <option value="CSE">Computer Science (CSE)</option>
-                <option value="ECE">Electronics (ECE)</option>
-                <option value="MECH">Mechanical (MECH)</option>
-                <option value="EEE">Electrical (EEE)</option>
-                <option value="CIVIL">Civil</option>
+                <option value="opt1">Civil & Architectural</option>
+                <option value="opt2">Contract Management</option>
+                <option value="opt3">Electrical</option>
+                <option value="opt4">Engineering Management</option>
+                <option value="opt5">Instrumentation & Process Control</option>
+                <option value="opt6">Mechanical</option>
+                <option value="opt7">Pipelines</option>
+                <option value="opt8">Piping</option>
+                <option value="opt9">Process</option>
+                <option value="opt12">Project Management</option>
+                <option value="opt10">Rotating</option>
+                <option value="opt11">Safety</option>
                 <option value="Other">Other</option>
               </select>
             </div>
@@ -177,7 +184,7 @@ function Forms() {
                 name="budget"
                 id="budget"
                 onChange={changebudget}
-                placeholder="Enter the estimated budget "
+                placeholder="Enter the estimated budget($)"
                 value={budget}
               ></input>
             </div>
@@ -221,11 +228,10 @@ function Forms() {
                 onChange={changeprojcat}
               >
                 <option value="">-- Select Project Type --</option>
-                <option value="opt1">option 1 </option>
-                <option value="opt2">option 2</option>
-                <option value="opt3">option 3</option>
-                <option value="opt4">option 4</option>
-                <option value="opt5">option 5</option>
+                <option value="opt1">Study</option>
+                <option value="opt2">Basic Engineering</option>
+                <option value="opt3">Engineering Details</option>
+                <option value="opt3">Management Consultancy </option>
                 <option value="Other">Other</option>
               </select>
             </div>
