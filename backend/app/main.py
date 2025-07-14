@@ -154,7 +154,7 @@ def send_magic_link(req:schemas.Email):
          }
          })
       if response:
-         return{"message":"the magic link has been sent"}
+         return{"message":"An approval link has been sent to your email"}
       else:
          return{"message":"failed to send message"}
       
